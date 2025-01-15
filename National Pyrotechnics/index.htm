@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>National Pyrotechnics - Fireworks, Sydney, Australia</title>
+		<meta name="keywords" content="Pyrotechnics, Fireworks, Sydney, Melboune, Brisbane, Hobart, Perth, Darwin, Adelaide, Australia" />
+		<meta name="description" content="National Pyrotechnics - Professional Fireworks Shows, Information, Multimedia and more." />
+		<meta name="robots" content="index,follow" /> 
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" language="javascript" charset="utf-8">
+			
+			
+			
+			
+			
+			$('#tsb-link').click(function() {
+				alert('Handler for .click() called.');
+			});
+
+
+	
+			var text = null;
+			var spot = null;
+			var box = null;
+			var boxProperty = '';
+
+			$(document).ready(function(){
+
+				text = document.getElementById('tsb-text');
+				spot = document.getElementById('tsb-spot');
+				box = document.getElementById('tsb-box');
+				
+				if (typeof box.style.webkitBoxShadow == 'string') {
+					boxProperty = 'webkitBoxShadow';
+				} else if (typeof box.style.MozBoxShadow == 'string') {
+					boxProperty = 'MozBoxShadow';
+				} else if (typeof box.style.boxShadow == 'string') {
+					boxProperty = 'boxShadow';
+				}
+
+				if (text && spot && box) {
+					document.getElementById('text-shadow-box').onmousemove = onMouseMove;
+
+					document.getElementById('text-shadow-box').ontouchmove = function (e) {e.preventDefault(); e.stopPropagation(); onMouseMove({clientX: e.touches[0].clientX, clientY: e.touches[0].clientY});};
+				}
+				
+				onMouseMove({clientX: Math.floor(window.innerWidth / 2), clientY: Math.floor(window.innerHeight / 2.75)});
+            });
+			
+
+			function onMouseMove(e) {
+				//var xm = (e.clientX - Math.floor(window.innerWidth / 2)) * 0.4;
+				//var ym = (e.clientY - Math.floor(window.innerHeight / 3)) * 0.4;
+				//var d = Math.round(Math.sqrt(xm*xm + ym*ym) / 5);
+				//text.style.textShadow = -xm + 'px ' + -ym + 'px ' + (d + 10) + 'px black';
+
+				//if (boxProperty) {
+				//	box.style[boxProperty] = '0 ' + -ym + 'px ' + (d + 30) + 'px black';
+				//}
+
+				xm = e.clientX - window.innerWidth;
+				ym = e.clientY - window.innerHeight;
+				spot.style.backgroundPosition = xm + 'px ' + ym + 'px';
+			}
+			
+
+			
+		</script>
+	</head>
+	<body>
+		<div id="text-shadow-box">
+			<div style="box-shadow: 0pt 88.4px 55px black;" id="tsb-box"></div>
+			<p style="text-shadow: 90.8px 88.4px 35px black;" id="tsb-text"></p>
+			<h1 id="tsb-link">National Pyrotechnics</h1>
+			<div id="tsb-wall"><p>Fireworks, Sydney, Australia</p></div>
+			<div style="background-position: -867px -803px;" id="tsb-spot"></div>
+		</div>
+		<div id=""></div>
+	</body>
+</html>
+<script type="text/javascript" language="javascript" charset="utf-8">
+/*
+
+
+
+
+
+//*/
+</script>
